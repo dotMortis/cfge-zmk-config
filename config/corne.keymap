@@ -69,7 +69,6 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
 /* Combos, leader key sequences, mouse emulation */
 
-#include "keys_de.h"
 #include "combos.dtsi"  // must be sources after HRM-combo hack
 #include "leader.dtsi"
 #include "mouse.dtsi"
@@ -212,17 +211,20 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 
 /* Keymap */
 
+#define DE_Y Z
+#define DE_Z Y
+
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)  // FN + NUM --> SYS
 
 ZMK_LAYER(base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    ___           &kp Q         &kp W         &kp F         &kp P         &kp B           &kp J         &kp L         &kp U         &kp Y         &kp SQT       ___          
+    XXX           &kp Q         &kp L         &kp D         &kp M         &kp B           &kp DE_Y      &kp F         &kp O         &kp U         &kp SQT       XXX          
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    ___           &hml LGUI A   &hml LALT R   &hml LSHFT S  &hml LCTRL T  &kp G           &kp M         &hmr LCTRL N  &hmr RSHFT E  &hmr LALT I   &hmr LGUI O   ___          
+    XXX           &hml LGUI S   &hml LALT R   &hml LSHFT T  &hml LCTRL C  &kp G           &kp P         &hmr LCTRL N  &hmr RSHFT E  &hmr LALT I   &hmr LGUI A   XXX          
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    ___           &kp DE_Z         &kp X         &kp C         &kp D         &kp V           &kp K         &kp H         &comma_morph  &dot_morph    &qexcl        ___          
+    XXX           &kp DE_Z      &kp X         &kp K         &kp W         &kp V           &kp J         &kp H         &comma_morph  &dot_morph    &qexcl        XXX          
 //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                              ___           &lt_spc NAV 0 &lt FN RET      SMART_NUM     &smart_shft   ___                                                    
+                                              XXX           &lt_spc NAV 0 &lt FN RET      SMART_NUM     &smart_shft   XXX                                                    
 //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯                                          
 )
 

@@ -64,6 +64,7 @@ build expr *west_args: _parse_combos
     targets=$(just _parse_targets {{ expr }})
 
     [[ -z $targets ]] && echo "No matching targets found. Aborting..." >&2 && exit 1
+
     echo "$targets" | while IFS=, read -r board shield; do
         just _build_single "$board" "$shield" {{ west_args }}
     done
@@ -84,7 +85,7 @@ clean-nix:
 draw:
     #!/usr/bin/env bash
     set -euo pipefail
-    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/corne.keymap" >"{{ draw }}/base.yaml"
+    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/corne_en.keymap" >"{{ draw }}/base.yaml"
     keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/base.yaml">"{{ draw }}/base.svg"
 
 # initialize west

@@ -113,7 +113,7 @@ ZMK_MOD_MORPH(smart_shft,
     /delete-property/ ignore-modifiers;
 };
 
-// tap: num-word | double-tap: sticky num-layer | hold: num-layer
+// tap: return | double-tap: num_word | hold: num-layer
 #define SMART_NUM &smart_num NUM 0
 ZMK_HOLD_TAP(smart_num,
     flavor = "balanced";
@@ -123,7 +123,7 @@ ZMK_HOLD_TAP(smart_num,
 )
 ZMK_TAP_DANCE(num_dance,
     tapping-term-ms = <200>;
-    bindings = <&num_word NUM>, <&sl NUM>;  // reverse this for sticky-num on single tap
+    bindings = <&kp RET>, <&num_word NUM>;  // tap RET double tap num_word
 )
 
 // smart-mouse, requires PR #1366
@@ -156,6 +156,9 @@ SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
 SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
 
+// tap: slash | shift + tap: backslash 
+SIMPLE_MORPH(slash_morph, SFT, &kp KP_SLASH, &kp BSLH)
+
 // tap: qmark | shift + tap: excl
 SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
 
@@ -163,7 +166,7 @@ SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
 SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
 SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
-// tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
+// tap: space | shift + tap: tab | hold: activate layer
 ZMK_HOLD_TAP(lt_spc,
     flavor = "balanced";
     tapping-term-ms = <200>;
@@ -174,7 +177,7 @@ SIMPLE_MORPH(spc_morph, SFT, &kp SPACE, &dot_spc)
 ZMK_MACRO(dot_spc,
     wait-ms = <0>;
     tap-ms = <5>;
-    bindings = <&kp DOT &kp SPACE &sk LSHFT>;
+    bindings = <&kp TAB>;
 )
 
 // tap: backspace | lshft + tap: delete | rshft + tap: shift-delete
@@ -211,20 +214,17 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 
 /* Keymap */
 
-#define DE_Y Z
-#define DE_Z Y
-
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)  // FN + NUM --> SYS
 
 ZMK_LAYER(base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    XXX           &kp Q         &kp L         &kp D         &kp M         &kp B           &kp DE_Y      &kp F         &kp O         &kp U         &kp SQT       XXX          
+    &kp ESC       &kp Q         &kp W         &kp E         &kp R         &kp T           &kp Y         &kp U         &kp I         &kp O         &kp P         &kp ESC          
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    XXX           &hml LGUI S   &hml LALT R   &hml LSHFT T  &hml LCTRL C  &kp G           &kp P         &hmr LCTRL N  &hmr RSHFT E  &hmr LALT I   &hmr LGUI A   XXX          
+    &kp F2        &hml LGUI A   &hml LALT S   &hml LSHFT D  &hml LCTRL F  &kp G           &kp H         &hmr LCTRL J  &hmr RSHFT K  &hmr LALT L   &hmr LGUI SQT &qexcl           
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    XXX           &kp DE_Z      &kp X         &kp K         &kp W         &kp V           &kp J         &kp H         &comma_morph  &dot_morph    &qexcl        XXX          
+    &smart_shft   &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N         &kp M         &comma_morph  &dot_morph    &slash_morph  &kp MINUS
 //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                              XXX           &lt_spc NAV 0 &lt FN RET      SMART_NUM     &smart_shft   XXX                                                    
+                                              &kp TAB       &lt_spc NAV 0 &lt FN RET      SMART_NUM     &kp bs_del    &kp DEL
 //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯                                          
 )
 
@@ -256,11 +256,11 @@ ZMK_LAYER(num,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     ___           ___           &kp N7        &kp N8        &kp N9        ___             ___           ___           ___           ___           ___           ___          
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    ___           &hml LGUI N0  &hml LALT N4  &hml LSHFT N5 &hml LCTRL N6 ___             ___           ___           ___           ___           ___           ___          
+    ___           ___           &hml LALT N4  &hml LSHFT N5 &hml LCTRL N6 ___             ___           ___           ___           ___           ___           ___          
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     ___           ___           &kp N1        &kp N2        &kp N3        ___             ___           ___           ___           ___           ___           ___          
 //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                              ___           ___           ___             ___           ___           ___                                                    
+                                              &kp N0        ___           ___             ___           ___           ___                                                    
 //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯                                          
 )
 

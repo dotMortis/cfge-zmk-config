@@ -69,6 +69,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
 /* Combos, leader key sequences, mouse emulation */
 
+#include "keys_en.h"
 #include "combos.dtsi"  // must be sources after HRM-combo hack
 #include "leader.dtsi"
 #include "mouse.dtsi"
@@ -149,22 +150,22 @@ ZMK_TRI_STATE(swapper,
     )
 
 // tap: comma | shift + tap: semicolon | ctrl + shift + tap: <
-SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
-SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
+SIMPLE_MORPH(comma_morph, SFT, &kp KEY_COMMA, &comma_inner_morph)
+SIMPLE_MORPH(comma_inner_morph, CTL, &kp KEY_SEMICOLON, &kp KEY_LT)
 
 // tap: dot | shift + tap: colon | ctrl + shift + tap: >
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
-SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
+SIMPLE_MORPH(dot_morph, SFT, &kp KEY_DOT, &dot_inner_morph)
+SIMPLE_MORPH(dot_inner_morph, CTL, &kp KEY_COLON, &kp KEY_GT)
 
 // tap: slash | shift + tap: backslash 
-SIMPLE_MORPH(slash_morph, SFT, &kp KP_SLASH, &kp BSLH)
+SIMPLE_MORPH(slash_morph, SFT, &kp KEY_SLASH, &kp KEY_BACKSLASH)
 
 // tap: qmark | shift + tap: excl
-SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
+SIMPLE_MORPH(qexcl, SFT, &kp KEY_QUESTION, &kp KEY_EXCLAMATION)
 
 // tap: left/right parenthesis | shft + tap: less-than/greater-than
-SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
-SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
+SIMPLE_MORPH(lpar_lt, SFT, &kp KEY_LEFT_PAREN, &kp KEY_LT)
+SIMPLE_MORPH(rpar_gt, SFT, &kp KEY_RIGHT_PAREN, &kp KEY_GT)
 
 // tap: space | shift + tap: tab | hold: activate layer
 ZMK_HOLD_TAP(lt_spc,
@@ -218,13 +219,13 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)  // FN + NUM --> SYS
 
 ZMK_LAYER(base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &kp ESC       &kp Q         &kp W         &kp E         &kp R         &kp T           &kp Y         &kp U         &kp I         &kp O         &kp P         &kp ESC          
+    &kp ESC       &kp Q         &kp W         &kp E         &kp R         &kp T           &kp KEY_Y     &kp U         &kp I         &kp O         &kp P         &kp ESC          
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp F2        &hml LGUI A   &hml LALT S   &hml LSHFT D  &hml LCTRL F  &kp G           &kp H         &hmr LCTRL J  &hmr RSHFT K  &hmr LALT L   &hmr LGUI SQT &qexcl           
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &smart_shft   &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N         &kp M         &comma_morph  &dot_morph    &slash_morph  &kp MINUS
+    &smart_shft   &kp KEY_Z     &kp X         &kp C         &kp V         &kp B           &kp N         &kp M         &comma_morph  &dot_morph    &slash_morph  &kp MINUS
 //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                              &kp TAB       &lt_spc NAV 0 &lt FN RET      SMART_NUM     &kp bs_del    &kp DEL
+                                              &kp TAB       &lt_spc NAV 0 &lt FN RET      SMART_NUM     &bs_del       &kp DEL
 //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯                                          
 )
 

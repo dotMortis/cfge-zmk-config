@@ -5,7 +5,7 @@
 #define KEY_E E
 #define KEY_R R
 #define KEY_T T
-#define KEY_Z Y
+#define KEY_Z Z
 #define KEY_U U
 #define KEY_I I
 #define KEY_O O
@@ -19,7 +19,7 @@
 #define KEY_J J
 #define KEY_K K
 #define KEY_L L
-#define KEY_Y Z
+#define KEY_Y Y
 #define KEY_X X
 #define KEY_C C
 #define KEY_V V
@@ -27,7 +27,7 @@
 #define KEY_N N
 #define KEY_M M
 
-#define KEY_SECTION LS(N3)     // §
+#define KEY_SECTION LALT(N3)   // §
 #define KEY_EXCLAMATION EXCL   // !
 #define KEY_QUOTE DOUBLE_QUOTES// "
 #define KEY_DOLLAR DOLLAR      // $
@@ -41,7 +41,7 @@
 #define KEY_BACKTICK GRAVE // `
 #define KEY_ACCENT LS(GRAVE) // ´ 
 
-#define KEY_EURO RA(E)    // €
+#define KEY_EURO RALT(N5)   // €
 #define KEY_AT AT_SIGN     // @
 #define KEY_LEFT_BRACE LEFT_BRACE  // {
 #define KEY_LEFT_BRACKET LEFT_BRACKET // [

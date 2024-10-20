@@ -27,40 +27,51 @@
 #define KEY_N N
 #define KEY_M M
 
+// umlauts
+#define KEY_OE SEMICOLON // Ö
+#define KEY_UE LEFT_BRACKET // Ü
+#define KEY_AE SINGLE_QUOTE // Ä
+#define KEY_SZ MINUS // ß ? backslash
+
+// symbols
+#define KEY_ACCENT EQUAL // ´ ` 
+#define KEY_HASH BSLH // # '
+#define KEY_COMMA COMMA // , ;
+#define KEY_DOT DOT // . :
+#define KEY_CARET GRAVE// ^ °
+#define KEY_PLUS RIGHT_BRACKET // + * ~
+#define KEY_LT NUBS // < > |
+#define KEY_MINUS SLASH // - _
+
+// shifted symbols
 #define KEY_SECTION LS(N3)     // §
-#define KEY_EXCLAMATION EXCL   // !
-#define KEY_QUOTE DOUBLE_QUOTES// "
-#define KEY_DOLLAR DOLLAR      // $
-#define KEY_PERCENT PERCENT    // %
-#define KEY_AMPERSAND AMPS     // &
-#define KEY_SLASH KP_SLASH       // /
-#define KEY_LEFT_PAREN LEFT_PARENTHESIS  // (
-#define KEY_RIGHT_PAREN RIGHT_PARENTHESIS // )
-#define KEY_EQUAL KP_EQUAL       // =
-#define KEY_QUESTION QUESTION // ?
-#define KEY_BACKTICK GRAVE // `
-#define KEY_ACCENT LS(GRAVE) // ´ 
+#define KEY_EXCLAMATION LS(N1)   // !
+#define KEY_QUOTE LS(N2)       // "
+#define KEY_DOLLAR LS(N4)      // $
+#define KEY_PERCENT LS(N5)    // %
+#define KEY_AMPERSAND LS(N6)     // &
+#define KEY_SLASH LS(N7)       // /
+#define KEY_LEFT_PAREN LS(N8)  // (
+#define KEY_RIGHT_PAREN LS(N9) // )
+#define KEY_EQUAL LS(N0)       // =
+#define KEY_QUESTION LS(KEY_SZ) // ?
+#define KEY_BACKTICK LS(KEY_ACCENT) // `
+#define KEY_SQUOTE LS(KEY_HASH) // '
+#define KEY_SEMICOLON LS(COMMA) // ;
+#define KEY_COLON LS(DOT)// :
+#define KEY_STAR LS(KEY_PLUS) // *
+#define KEY_GT LS(KEY_LT) // >
+#define KEY_UNDERSCORE LS(KEY_MINUS) // _
 
-#define KEY_EURO RA(E)    // €
-#define KEY_AT AT_SIGN     // @
-#define KEY_LEFT_BRACE LEFT_BRACE  // {
-#define KEY_LEFT_BRACKET LEFT_BRACKET // [
-#define KEY_RIGHT_BRACKET RIGHT_BRACKET // ]
-#define KEY_RIGHT_BRACE RIGHT_BRACE   // }
-#define KEY_PIPE PIPE // |
-#define KEY_TILDE TILDE // ~
+// alt symbols
+#define KEY_EURO RA(KEY_E)    // €
+#define KEY_AT RA(KEY_Q)     // @
+#define KEY_LEFT_BRACE RA(N7)  // {
+#define KEY_LEFT_BRACKET RA(N8) // [
+#define KEY_RIGHT_BRACKET RA(N9) // ]
+#define KEY_RIGHT_BRACE RA(N0)   // }
+#define KEY_PIPE RA(KEY_LT) // |
+#define KEY_TILDE RA(KEY_PLUS) // ~
+#define KEY_BACKSLASH RA(KEY_SZ) // backslash
 
-#define KEY_GT GREATER_THAN // >
-#define KEY_LT LESS_THAN // <
-#define KEY_HASH HASH // #
-#define KEY_MINUS KP_MINUS // -
-#define KEY_UNDERSCORE UNDERSCORE // _
-#define KEY_BACKSLASH BACKSLASH // \
 
-#define KEY_COMMA COMMA // ,
-#define KEY_SEMICOLON SEMICOLON // ;
-#define KEY_DOT DOT // .
-#define KEY_COLON COLON// :
-#define KEY_CARET CARET// ^
-#define KEY_PLUS PLUS //+
-#define KEY_STAR STAR //*

@@ -4,4 +4,13 @@ parse_config:
     - "modules/helpers/include"
 
 draw_config:
-  dark_mode: auto
+  dark_mode: true
+  split_gap: 30
+  combo_w: 30
+  combo_h: 28
+  separate_combo_diagrams: true
+  combo_diagrams_scale: 2
+  inner_pad_w: 3
+  inner_pad_h: 3
+  footer_text: Catge/Foodge
+  combo_diagrams_scale: 3

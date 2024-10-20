@@ -27,40 +27,51 @@
 #define KEY_N N
 #define KEY_M M
 
-#define KEY_SECTION LALT(N3)   // §
-#define KEY_EXCLAMATION EXCL   // !
-#define KEY_QUOTE DOUBLE_QUOTES// "
-#define KEY_DOLLAR DOLLAR      // $
-#define KEY_PERCENT PERCENT    // %
-#define KEY_AMPERSAND AMPS     // &
-#define KEY_SLASH KP_SLASH       // /
-#define KEY_LEFT_PAREN LEFT_PARENTHESIS  // (
-#define KEY_RIGHT_PAREN RIGHT_PARENTHESIS // )
-#define KEY_EQUAL KP_EQUAL       // =
-#define KEY_QUESTION QUESTION // ?
-#define KEY_BACKTICK GRAVE // `
-#define KEY_ACCENT LS(GRAVE) // ´ 
+// umlauts
+#define KEY_OE O // Ö
+#define KEY_UE U // Ü
+#define KEY_AE A // Ä
+#define KEY_SZ S // ß 
 
-#define KEY_EURO RALT(N5)   // €
-#define KEY_AT AT_SIGN     // @
-#define KEY_LEFT_BRACE LEFT_BRACE  // {
-#define KEY_LEFT_BRACKET LEFT_BRACKET // [
-#define KEY_RIGHT_BRACKET RIGHT_BRACKET // ]
-#define KEY_RIGHT_BRACE RIGHT_BRACE   // }
+// symbols
+#define KEY_ACCENT GRAVE // ´ ` 
+#define KEY_HASH HASH // # '
+#define KEY_COMMA COMMA // , ;
+#define KEY_DOT DOT // . :
+#define KEY_CARET CARET// ^ 
+#define KEY_PLUS PLUS // + 
+#define KEY_LT LT // < > |
+#define KEY_MINUS MINUS // - _
+
+// shifted symbols
+#define KEY_SECTION LALT(N3)     // §
+#define KEY_EXCLAMATION EXCLAMATION   // !
+#define KEY_QUOTE DQT       // "
+#define KEY_DOLLAR DOLLAR      // $
+#define KEY_PERCENT PRECENT    // %
+#define KEY_AMPERSAND AMPS     // &
+#define KEY_SLASH SLASH       // /
+#define KEY_LEFT_PAREN LPAR  // (
+#define KEY_RIGHT_PAREN RPAR // )
+#define KEY_EQUAL EQUAL       // =
+#define KEY_QUESTION QMARK // ?
+#define KEY_BACKTICK GRAVE // `
+#define KEY_SQUOTE SQT // '
+#define KEY_SEMICOLON SEMI // ;
+#define KEY_COLON COLON// :
+#define KEY_STAR STAR // *
+#define KEY_GT GT // >
+#define KEY_UNDERSCORE UNDER // _
+
+// alt symbols
+#define KEY_EURO E    // €
+#define KEY_AT AT     // @
+#define KEY_LEFT_BRACE LBRC  // {
+#define KEY_LEFT_BRACKET LBKT // [
+#define KEY_RIGHT_BRACKET RBKT // ]
+#define KEY_RIGHT_BRACE RBRC   // }
 #define KEY_PIPE PIPE // |
 #define KEY_TILDE TILDE // ~
+#define KEY_BACKSLASH BSLH // backslash
 
-#define KEY_GT GREATER_THAN // >
-#define KEY_LT LESS_THAN // <
-#define KEY_HASH HASH // #
-#define KEY_MINUS KP_MINUS // -
-#define KEY_UNDERSCORE UNDERSCORE // _
-#define KEY_BACKSLASH BACKSLASH // \
 
-#define KEY_COMMA COMMA // ,
-#define KEY_SEMICOLON SEMICOLON // ;
-#define KEY_DOT DOT // .
-#define KEY_COLON COLON// :
-#define KEY_CARET CARET// ^
-#define KEY_PLUS PLUS //+
-#define KEY_STAR STAR //*

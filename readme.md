@@ -1,12 +1,10 @@
-# urob's zmk-config
+# urob's zmk-config for 6 column corne
 
-This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/)
-configuration. It consists of a 34-keys base layout that is re-used for various
-boards, including my Corneish Zen and my Planck.
+[OP: Urob](https://github.com/urob/)
 
-This branch is updated for the latest ZMK using Zephyr 3.5. A legacy version
-compatible with Zephyr 3.0 is available
-[here](https://github.com/urob/zmk-config/tree/main-zephyr-3.0).
+I've just tweaked some stuff to make it fit my corne.
+
+![Keymap](draw/keymap.png)
 
 ## Highlights
 
@@ -24,8 +22,6 @@ compatible with Zephyr 3.0 is available
   !</kbd>
 - Fully automated, nix-based
   [local build environment](#local-development-workspace)
-
-![](draw/keymap.png)
 
 ## Timeless homerow mods
 
